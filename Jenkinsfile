@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage ("Initialize Jenkins Env") {
          steps {
+            bat 'echo %PATH%'
             bat '''
             echo "PATH = ${PATH}"
             echo "M2_HOME = ${M2_HOME}"
