@@ -18,4 +18,4 @@ ADD src /code/src
 RUN ["mvn", "package", "-DskipTests"]
 
 EXPOSE 8080
-CMD ["java", "-jar", "target/online-bank-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/online-banking-0.0.1-SNAPSHOT.jar"]
