@@ -44,7 +44,7 @@ pipeline {
             //    sh 'docker kill cloudbank 2> /dev/null'
             //    sh 'docker rm bankmysql 2> /dev/null'
             //    sh 'docker rm cloudbank 2> /dev/null'
-                bat 'docker stop bankmysql || true && docker rm bankmysql || true'
+                bat 'docker rm -f container_name || true'
                 bat 'docker run --detach --name=bankmysql --env="MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}" -p 3306:3306 mysql'
                 bat 'sleep 20'
             //  sh 'docker exec -i bankmysql mysql -uroot -proot < sql_dump/onlinebanking.sql'
