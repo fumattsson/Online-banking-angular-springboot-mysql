@@ -48,7 +48,7 @@ pipeline {
                 bat 'docker run --detach --name=bankmysql --env="MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}" -p 3305:3305 mysql'
                 bat 'ping -n 20 127.0.0.1'
             //  sh 'docker exec -i bankmysql mysql -uroot -proot < sql_dump/onlinebanking.sql'
-                bat 'docker exec -i bankmysql mysql -uroot -p${MYSQL_ROOT_PASSWORD} < sql_dump/onlinebanking.sql'
+                bat 'docker exec -i bankmysql mysql -uroot -p${MYSQL_ROOT_PASSWORD}'
             }
         }
         stage('Deploy and Run') {
