@@ -54,7 +54,8 @@ pipeline {
         stage('Deploy and Run') {
             steps {
                 echo 'Running Application'
-                bat 'docker stop cloudbank || true && docker rm cloudbank || true'
+            //    bat 'docker stop cloudbank || true && docker rm cloudbank || true'
+                bat 'docker rm -f cloudbank || true'
                 bat 'docker run --detach --name=cloudbank -p 8888:8888 --link bankmysql:localhost -t hendisantika/online-banking:1'
             }
         }
